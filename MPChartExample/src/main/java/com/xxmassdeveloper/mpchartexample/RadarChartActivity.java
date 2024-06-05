@@ -1,6 +1,9 @@
 
 package com.xxmassdeveloper.mpchartexample;
 
+import static com.github.mikephil.charting.charts.PieRadarChartBase.ROTATION_INSIDE_ONLY;
+import static com.github.mikephil.charting.charts.PieRadarChartBase.ROTATION_NONE;
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -181,10 +184,10 @@ public class RadarChartActivity extends DemoBase {
                 break;
             }
             case R.id.actionToggleRotate: {
-                if (chart.isRotationEnabled())
-                    chart.setRotationEnabled(false);
+                if (chart.isRotationEnabled() != ROTATION_NONE)
+                    chart.setRotationEnabled(ROTATION_NONE);
                 else
-                    chart.setRotationEnabled(true);
+                    chart.setRotationEnabled(ROTATION_INSIDE_ONLY);
                 chart.invalidate();
                 break;
             }

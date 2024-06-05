@@ -1,6 +1,8 @@
 
 package com.xxmassdeveloper.mpchartexample;
 
+import static com.github.mikephil.charting.charts.PieRadarChartBase.ROTATION_FULL;
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -91,7 +93,7 @@ public class PiePolylineChartActivity extends DemoBase implements OnSeekBarChang
 
         chart.setRotationAngle(0);
         // enable rotation of the chart by touch
-        chart.setRotationEnabled(true);
+        chart.setRotationEnabled(ROTATION_FULL);
         chart.setHighlightPerTapEnabled(true);
 
         // chart.setUnit(" €");

@@ -1,6 +1,9 @@
 
 package com.github.mikephil.charting.listener;
 
+import static com.github.mikephil.charting.charts.PieRadarChartBase.ROTATION_FULL;
+import static com.github.mikephil.charting.charts.PieRadarChartBase.ROTATION_INSIDE_ONLY;
+
 import android.annotation.SuppressLint;
 import android.graphics.PointF;
 import android.view.MotionEvent;
@@ -46,7 +49,8 @@ public class PieRadarChartTouchListener extends ChartTouchListener<PieRadarChart
 
         // if rotation by touch is enabled
         // TODO: Also check if the pie itself is being touched, rather than the entire chart area
-        if (mChart.isRotationEnabled()) {
+        int rotationEnabled = mChart.isRotationEnabled();
+        if (rotationEnabled == ROTATION_FULL || (rotationEnabled == ROTATION_INSIDE_ONLY && (mChart.getHighlightByTouchPoint(event.getX(), event.getY()) != null))) {
 
             float x = event.getX();
             float y = event.getY();

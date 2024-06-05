@@ -30,6 +30,10 @@ import com.github.mikephil.charting.utils.Utils;
 public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<? extends Entry>>>
         extends Chart<T> {
 
+    public static int ROTATION_NONE = 0;
+    public static int ROTATION_INSIDE_ONLY = 1;
+    public static int ROTATION_FULL = 2;
+
     /**
      * holds the normalized version of the current rotation angle of the chart
      */
@@ -43,7 +47,7 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
     /**
      * flag that indicates if rotation is enabled or not
      */
-    protected boolean mRotateEnabled = true;
+    protected int mRotateEnabled = ROTATION_FULL;
 
     /**
      * Sets the minimum offset (padding) around the chart, defaults to 0.f
@@ -385,21 +389,20 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
     }
 
     /**
-     * Set this to true to enable the rotation / spinning of the chart by touch.
-     * Set it to false to disable it. Default: true
+     * Set this to ROTATION_FULL to enable the rotation / spinning of the chart by touch.
+     * ROTATION_INSIDE_ONLY prevents touches outside of the chart to trigger rotation
+     * Set it to ROTATION_NONE to disable it. Default: ROTATION_FULL
      *
      * @param enabled
      */
-    public void setRotationEnabled(boolean enabled) {
+    public void setRotationEnabled(int enabled) {
         mRotateEnabled = enabled;
     }
 
     /**
-     * Returns true if rotation of the chart by touch is enabled, false if not.
-     *
-     * @return
+     * @return ROTATION_NONE, ROTATION_INSIDE_ONLY or ROTATION_FULL
      */
-    public boolean isRotationEnabled() {
+    public int isRotationEnabled() {
         return mRotateEnabled;
     }
 

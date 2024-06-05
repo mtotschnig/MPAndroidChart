@@ -1,6 +1,8 @@
 
 package com.xxmassdeveloper.mpchartexample;
 
+import static com.github.mikephil.charting.charts.PieRadarChartBase.ROTATION_NONE;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -64,7 +66,7 @@ public class HalfPieChartActivity extends DemoBase {
 
         chart.setDrawCenterText(true);
 
-        chart.setRotationEnabled(false);
+        chart.setRotationEnabled(ROTATION_NONE);
         chart.setHighlightPerTapEnabled(true);
 
         chart.setMaxAngle(180f); // HALF CHART
