@@ -52,6 +52,7 @@
         <activity android:name="BarChartPositiveNegative" />
         <activity android:name="FilledLineActivity" />
         <activity android:name="HalfPieChartActivity" />
+        <activity android:name="DoublePieChartActivity" />
     </application>
 
 </manifest>

@@ -22,6 +22,7 @@ import com.xxmassdeveloper.mpchartexample.BubbleChartActivity;
 import com.xxmassdeveloper.mpchartexample.CandleStickChartActivity;
 import com.xxmassdeveloper.mpchartexample.CombinedChartActivity;
 import com.xxmassdeveloper.mpchartexample.CubicLineChartActivity;
+import com.xxmassdeveloper.mpchartexample.DoublePieChartActivity;
 import com.xxmassdeveloper.mpchartexample.DynamicalAddingActivity;
 import com.xxmassdeveloper.mpchartexample.FilledLineActivity;
 import com.xxmassdeveloper.mpchartexample.HalfPieChartActivity;
@@ -123,6 +124,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         objects.add(36, new ContentItem("Realtime", "Add data points in realtime."));
         objects.add(37, new ContentItem("Hourly", "Uses the current time to add a data point for each hour."));
         //objects.add(38, new ContentItem("Realm.io Examples", "See more examples that use Realm.io mobile database."));
+
+        objects.add(38, new ContentItem("Nested", "Double pie chart"));
 
         MyAdapter adapter = new MyAdapter(this, objects);
 
@@ -234,6 +237,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
             case 37:
                 i = new Intent(this, LineChartTime.class);
                 break;
+            case 38:
+                i = new Intent(this, DoublePieChartActivity.class);
             /*case 38:
                 i = new Intent(this, RealmMainActivity.class);
                 break;*/
