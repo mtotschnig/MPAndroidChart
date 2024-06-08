@@ -754,15 +754,15 @@ public class PieChart extends PieRadarChartBase<PieData> {
      * Sets the max angle that is used for calculating the pie-circle. 360f means
      * it's a full PieChart, 180f results in a half-pie-chart. Default: 360f
      *
-     * @param maxangle min 90, max 360
+     * @param maxangle min 0, max 360
      */
     public void setMaxAngle(float maxangle) {
 
         if (maxangle > 360)
             maxangle = 360f;
 
-        if (maxangle < 90)
-            maxangle = 90f;
+        if (maxangle < 0)
+            maxangle = 0f;
 
         this.mMaxAngle = maxangle;
     }
